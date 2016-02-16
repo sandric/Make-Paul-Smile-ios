@@ -1035,7 +1035,11 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Top Games" id="DWC-Rg-4rQ">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="bfr-7X-otV"/>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="bfr-7X-otV">
+                            <connections>
+                                <action selector="refreshBarButtonPressed:" destination="qZ7-E1-9wY" id="NTt-hZ-jCg"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
