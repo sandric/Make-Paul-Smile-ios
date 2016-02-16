@@ -30,6 +30,9 @@
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="138" y="269" width="44" height="30"/>
                                 </variation>
+                                <connections>
+                                    <segue destination="MRU-yw-OcN" kind="show" id="hMG-gf-Z5z"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ask-nz-XQ0">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -37,6 +40,9 @@
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="145" y="376" width="30" height="30"/>
                                 </variation>
+                                <connections>
+                                    <segue destination="qZ7-E1-9wY" kind="show" id="Y9Y-dy-Vv7"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -719,7 +725,7 @@
         <!--Profile-->
         <scene sceneID="ny8-P9-M8J">
             <objects>
-                <viewController id="MRU-yw-OcN" customClass="ProfileViewController" sceneMemberID="viewController">
+                <viewController id="MRU-yw-OcN" customClass="ProfileViewController" customModule="MPS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jCh-Bg-mDo"/>
                         <viewControllerLayoutGuide type="bottom" id="W33-jp-Gf9"/>
@@ -940,22 +946,22 @@
                     <navigationItem key="navigationItem" title="Profile" id="Y7o-bn-Fmd">
                         <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="FFS-bd-aT5">
                             <connections>
-                                <action selector="reloadBarButtonItemPressed:" destination="MRU-yw-OcN" id="i3V-VX-kCQ"/>
+                                <action selector="reloadBarButtomPressed:" destination="MRU-yw-OcN" id="gnD-yx-z3W"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="bestClosedGameScore" destination="85x-1l-aw8" id="Gp7-6z-86S"/>
-                        <outlet property="bestFlankGameScore" destination="GFr-Eb-Lja" id="Qn7-kr-QV8"/>
-                        <outlet property="bestGameGroupLabel" destination="DnZ-5j-E8k" id="oHm-dF-9hC"/>
-                        <outlet property="bestGameScoreLabel" destination="MnC-da-6h9" id="q6b-IT-HJS"/>
-                        <outlet property="bestIndianDefenceGameScore" destination="t5c-ll-Ny2" id="LXh-EC-DqS"/>
-                        <outlet property="bestOpenGameScore" destination="DbQ-GA-9Oh" id="hBJ-Br-5pc"/>
-                        <outlet property="bestSemiClosedGameScore" destination="Nc1-Ua-ccn" id="52J-jb-1s7"/>
-                        <outlet property="bestSemiOpenGameScore" destination="gcq-hl-sal" id="d7s-ME-8J1"/>
-                        <outlet property="usernameLabel" destination="3Lo-D6-yIB" id="eoB-MF-CfS"/>
+                        <outlet property="bestClosedGameScore" destination="85x-1l-aw8" id="C2m-cj-vsB"/>
+                        <outlet property="bestFlankGameScore" destination="GFr-Eb-Lja" id="nzb-0G-yLh"/>
+                        <outlet property="bestGameGroupLabel" destination="DnZ-5j-E8k" id="Cn0-pE-EvM"/>
+                        <outlet property="bestGameScoreLabel" destination="MnC-da-6h9" id="Hi5-kc-4e8"/>
+                        <outlet property="bestIndianDefenceGameScore" destination="t5c-ll-Ny2" id="50w-PI-nBq"/>
+                        <outlet property="bestOpenGameScore" destination="DbQ-GA-9Oh" id="oY5-QF-jH7"/>
+                        <outlet property="bestSemiClosedGameScore" destination="Nc1-Ua-ccn" id="Od4-Fh-cfp"/>
+                        <outlet property="bestSemiOpenGameScore" destination="gcq-hl-sal" id="Wwa-T3-btQ"/>
+                        <outlet property="usernameLabel" destination="3Lo-D6-yIB" id="NY5-K9-5Ng"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WyU-1z-5ho" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -965,14 +971,14 @@
         <!--Top Games-->
         <scene sceneID="05k-t7-q2X">
             <objects>
-                <tableViewController id="qZ7-E1-9wY" customClass="TopTableViewController" sceneMemberID="viewController">
+                <tableViewController id="qZ7-E1-9wY" customClass="TopTableViewController" customModule="MPS" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="T29-TE-M00">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TopCell" id="Ek7-3M-3lh">
-                                <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                <rect key="frame" x="0.0" y="92" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Ek7-3M-3lh" id="cdg-rb-h85">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
@@ -1029,11 +1035,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Top Games" id="DWC-Rg-4rQ">
-                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="bfr-7X-otV">
-                            <connections>
-                                <action selector="onRefreshBarButtonPressed:" destination="qZ7-E1-9wY" id="QUa-KA-L62"/>
-                            </connections>
-                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" style="plain" systemItem="refresh" id="bfr-7X-otV"/>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
