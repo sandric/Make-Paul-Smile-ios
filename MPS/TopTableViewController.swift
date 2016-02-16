@@ -8,8 +8,6 @@
 
 import UIKit
 
-import Alamofire
-
 
 class TopTableViewController: UITableViewController {
     
@@ -20,13 +18,7 @@ class TopTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.fetchTopGames()
-        
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        TopService.fetchTopGames(self.onTopGamesFetched)
     }
     
     override func didReceiveMemoryWarning() {
@@ -37,12 +29,10 @@ class TopTableViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return self.topGames.count
     }
     
@@ -65,24 +55,18 @@ class TopTableViewController: UITableViewController {
         
         let scoreLabel:UILabel = cell.viewWithTag(3) as! UILabel
         scoreLabel.text = "\(score!)"
-                
+        
         return cell
     }
     
     
-    func fetchTopGames () {
-        Alamofire.request(.GET, "http://localhost:8080/api/top")
-            .responseJSON { response in
-                if let topResults = response.result.value as? Array<Dictionary<String,AnyObject>> {
-                    self.topGames = topResults;
-                    self.tableView.reloadData()
-                }
-        }
+    func onTopGamesFetched(results : Array<Dictionary<String,AnyObject>>) {
+        self.topGames = results
+        self.tableView.reloadData()
     }
     
-    
     @IBAction func refreshBarButtonPressed(sender: UIBarButtonItem) {
-        self.fetchTopGames()
+        TopService.fetchTopGames(self.onTopGamesFetched)
     }
 
 }

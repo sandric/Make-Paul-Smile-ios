@@ -17,13 +17,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNf-AL-CPZ">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Game"/>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="140" y="152" width="41" height="30"/>
-                                </variation>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3VP-Yx-Uu4">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Profile"/>
@@ -44,20 +37,30 @@
                                     <segue destination="qZ7-E1-9wY" kind="show" id="Y9Y-dy-Vv7"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNf-AL-CPZ">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Game"/>
+                                <variation key="heightClass=regular" fixedFrame="YES">
+                                    <rect key="frame" x="140" y="157" width="41" height="30"/>
+                                </variation>
+                                <connections>
+                                    <segue destination="MIy-Go-7Ix" kind="show" id="t7T-VK-vTG"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <variation key="default">
                             <mask key="subviews">
-                                <exclude reference="DNf-AL-CPZ"/>
                                 <exclude reference="3VP-Yx-Uu4"/>
                                 <exclude reference="Ask-nz-XQ0"/>
+                                <exclude reference="DNf-AL-CPZ"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular">
                             <mask key="subviews">
-                                <include reference="DNf-AL-CPZ"/>
                                 <include reference="3VP-Yx-Uu4"/>
                                 <include reference="Ask-nz-XQ0"/>
+                                <include reference="DNf-AL-CPZ"/>
                             </mask>
                         </variation>
                     </view>
@@ -68,6 +71,32 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hc9-Vb-05K" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-424" y="-38"/>
+        </scene>
+        <!--Openings Groups Table View Controller-->
+        <scene sceneID="ddt-Oc-tkp">
+            <objects>
+                <tableViewController id="MIy-Go-7Ix" customClass="OpeningsGroupsTableViewController" customModule="MPS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="bCD-H5-bI6">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OpeningsGroupsCellIdentifier" id="hgj-43-egH">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="hgj-43-egH" id="oYn-f1-0DB">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="MIy-Go-7Ix" id="4GU-7T-Y3f"/>
+                            <outlet property="delegate" destination="MIy-Go-7Ix" id="oQy-pF-CIy"/>
+                        </connections>
+                    </tableView>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sZF-Vb-sjB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-65" y="-38.25"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="HMJ-e4-Uzn">
@@ -87,64 +116,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8XU-mK-NEr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-800" y="-38"/>
-        </scene>
-        <!--Groups-->
-        <scene sceneID="hni-W8-HXV">
-            <objects>
-                <viewController id="Eqt-9G-RoD" customClass="OpeningGroupsViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="dCM-Q9-jBt"/>
-                        <viewControllerLayoutGuide type="bottom" id="Z7z-zI-ZGL"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="GsV-oN-VHc">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bdd-Lx-VpW">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="OpeningGroupCell" id="lFJ-WR-KdP">
-                                        <rect key="frame" x="0.0" y="28" width="280" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lFJ-WR-KdP" id="Ggd-2f-lvY">
-                                            <rect key="frame" x="0.0" y="0.0" width="240" height="43"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="63" width="280" height="485"/>
-                                </variation>
-                                <connections>
-                                    <outlet property="dataSource" destination="Eqt-9G-RoD" id="Afn-bK-GSp"/>
-                                    <outlet property="delegate" destination="Eqt-9G-RoD" id="ICr-it-FAo"/>
-                                </connections>
-                            </tableView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="bdd-Lx-VpW"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=regular">
-                            <mask key="subviews">
-                                <include reference="bdd-Lx-VpW"/>
-                            </mask>
-                        </variation>
-                    </view>
-                    <navigationItem key="navigationItem" title="Groups" id="2cW-o8-cbf"/>
-                    <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="OpeningGroupsTableView" destination="bdd-Lx-VpW" id="Vuq-6s-h1r"/>
-                        <outlet property="openingGroupsTableView" destination="bdd-Lx-VpW" id="hLq-yV-smu"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="a7k-hI-lrS" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-65" y="-38"/>
         </scene>
         <!--Openings View Controller-->
         <scene sceneID="lxU-MQ-8bW">
