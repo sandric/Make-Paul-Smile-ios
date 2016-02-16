@@ -17,6 +17,7 @@
 		26D0BB321C736C6300285584 /* TopTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB311C736C6300285584 /* TopTableViewController.swift */; };
 		26D0BB351C73A22700285584 /* OpeningsGroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB341C73A22700285584 /* OpeningsGroupsTableViewController.swift */; };
 		26D0BB381C73A58C00285584 /* TopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB371C73A58C00285584 /* TopService.swift */; };
+		26D0BB3A1C73AB3400285584 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB391C73AB3400285584 /* ProfileService.swift */; };
 		973401B8078F868F6BFFBFA4 /* Pods_MPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFEF80EB0550F8839C09CB6 /* Pods_MPS.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,6 +34,7 @@
 		26D0BB311C736C6300285584 /* TopTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopTableViewController.swift; sourceTree = "<group>"; };
 		26D0BB341C73A22700285584 /* OpeningsGroupsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningsGroupsTableViewController.swift; sourceTree = "<group>"; };
 		26D0BB371C73A58C00285584 /* TopService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopService.swift; sourceTree = "<group>"; };
+		26D0BB391C73AB3400285584 /* ProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
 		7EFEF80EB0550F8839C09CB6 /* Pods_MPS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B84BA18C02F9CB0916C9B0 /* Pods-MPS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MPS/Pods-MPS.debug.xcconfig"; sourceTree = "<group>"; };
 		F509E8AFFAFFFBDB9A03E026 /* Pods-MPS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MPS/Pods-MPS.release.xcconfig"; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				26D0BB371C73A58C00285584 /* TopService.swift */,
+				26D0BB391C73AB3400285584 /* ProfileService.swift */,
 			);
 			name = services;
 			sourceTree = "<group>";
@@ -242,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				26D0BB381C73A58C00285584 /* TopService.swift in Sources */,
+				26D0BB3A1C73AB3400285584 /* ProfileService.swift in Sources */,
 				26D0BB1D1C73647400285584 /* MainViewController.swift in Sources */,
 				26D0BB321C736C6300285584 /* TopTableViewController.swift in Sources */,
 				26D0BB1B1C73647400285584 /* AppDelegate.swift in Sources */,

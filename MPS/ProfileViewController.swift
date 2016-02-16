@@ -8,7 +8,6 @@
 
 import UIKit
 
-import Alamofire
 
 class ProfileViewController: UIViewController {
 
@@ -40,21 +39,9 @@ class ProfileViewController: UIViewController {
 
 
     @IBAction func reloadBarButtomPressed(sender: UIBarButtonItem) {
-        self.fetchProfileToUserDefaults()
+        ProfileService.fetchProfileToUserDefaults(self.onUserDefaultsChanged)
     }
     
-    
-    func fetchProfileToUserDefaults () {
-        Alamofire.request(.GET, "http://localhost:8080/api/users/7")
-            .responseJSON { response in
-                if let profileResults = response.result.value {
-                    NSUserDefaults.standardUserDefaults()
-                        .setObject(profileResults, forKey: "profile")
-                    
-                    self.displayProfileUserDefaults()
-                }
-        }
-    }
     
     
     func displayProfileUserDefaults () {
@@ -116,10 +103,7 @@ class ProfileViewController: UIViewController {
     }
     
     
-    
-    
-    
-    
-    
-    
+    func onUserDefaultsChanged () {
+        self.displayProfileUserDefaults()
+    }
 }
