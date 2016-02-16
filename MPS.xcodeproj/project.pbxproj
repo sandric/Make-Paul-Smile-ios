@@ -18,6 +18,10 @@
 		26D0BB351C73A22700285584 /* OpeningsGroupsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB341C73A22700285584 /* OpeningsGroupsTableViewController.swift */; };
 		26D0BB381C73A58C00285584 /* TopService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB371C73A58C00285584 /* TopService.swift */; };
 		26D0BB3A1C73AB3400285584 /* ProfileService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB391C73AB3400285584 /* ProfileService.swift */; };
+		26D0BB3C1C73AC6B00285584 /* OpeningsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB3B1C73AC6B00285584 /* OpeningsService.swift */; };
+		26D0BB3F1C73BD0400285584 /* OpeningModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB3D1C73BD0300285584 /* OpeningModel+CoreDataProperties.swift */; };
+		26D0BB401C73BD0400285584 /* OpeningModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB3E1C73BD0300285584 /* OpeningModel.swift */; };
+		26D0BB481C73CB5400285584 /* OpeningsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB471C73CB5400285584 /* OpeningsTableViewController.swift */; };
 		973401B8078F868F6BFFBFA4 /* Pods_MPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFEF80EB0550F8839C09CB6 /* Pods_MPS.framework */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +39,10 @@
 		26D0BB341C73A22700285584 /* OpeningsGroupsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningsGroupsTableViewController.swift; sourceTree = "<group>"; };
 		26D0BB371C73A58C00285584 /* TopService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TopService.swift; sourceTree = "<group>"; };
 		26D0BB391C73AB3400285584 /* ProfileService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileService.swift; sourceTree = "<group>"; };
+		26D0BB3B1C73AC6B00285584 /* OpeningsService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningsService.swift; sourceTree = "<group>"; };
+		26D0BB3D1C73BD0300285584 /* OpeningModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "OpeningModel+CoreDataProperties.swift"; path = "../OpeningModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		26D0BB3E1C73BD0300285584 /* OpeningModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpeningModel.swift; path = ../OpeningModel.swift; sourceTree = "<group>"; };
+		26D0BB471C73CB5400285584 /* OpeningsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningsTableViewController.swift; sourceTree = "<group>"; };
 		7EFEF80EB0550F8839C09CB6 /* Pods_MPS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B84BA18C02F9CB0916C9B0 /* Pods-MPS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MPS/Pods-MPS.debug.xcconfig"; sourceTree = "<group>"; };
 		F509E8AFFAFFFBDB9A03E026 /* Pods-MPS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MPS/Pods-MPS.release.xcconfig"; sourceTree = "<group>"; };
@@ -74,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				26D0BB291C73647500285584 /* Info.plist */,
+				26D0BB3D1C73BD0300285584 /* OpeningModel+CoreDataProperties.swift */,
+				26D0BB3E1C73BD0300285584 /* OpeningModel.swift */,
 				26D0BB211C73647400285584 /* MPS.xcdatamodeld */,
 				26D0BB1A1C73647400285584 /* AppDelegate.swift */,
 				26D0BB1E1C73647400285584 /* Main.storyboard */,
@@ -92,6 +102,7 @@
 				26D0BB2F1C736BA500285584 /* ProfileViewController.swift */,
 				26D0BB311C736C6300285584 /* TopTableViewController.swift */,
 				26D0BB341C73A22700285584 /* OpeningsGroupsTableViewController.swift */,
+				26D0BB471C73CB5400285584 /* OpeningsTableViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -101,6 +112,7 @@
 			children = (
 				26D0BB371C73A58C00285584 /* TopService.swift */,
 				26D0BB391C73AB3400285584 /* ProfileService.swift */,
+				26D0BB3B1C73AC6B00285584 /* OpeningsService.swift */,
 			);
 			name = services;
 			sourceTree = "<group>";
@@ -246,11 +258,15 @@
 			files = (
 				26D0BB381C73A58C00285584 /* TopService.swift in Sources */,
 				26D0BB3A1C73AB3400285584 /* ProfileService.swift in Sources */,
+				26D0BB401C73BD0400285584 /* OpeningModel.swift in Sources */,
 				26D0BB1D1C73647400285584 /* MainViewController.swift in Sources */,
 				26D0BB321C736C6300285584 /* TopTableViewController.swift in Sources */,
 				26D0BB1B1C73647400285584 /* AppDelegate.swift in Sources */,
+				26D0BB481C73CB5400285584 /* OpeningsTableViewController.swift in Sources */,
 				26D0BB301C736BA500285584 /* ProfileViewController.swift in Sources */,
+				26D0BB3F1C73BD0400285584 /* OpeningModel+CoreDataProperties.swift in Sources */,
 				26D0BB351C73A22700285584 /* OpeningsGroupsTableViewController.swift in Sources */,
+				26D0BB3C1C73AC6B00285584 /* OpeningsService.swift in Sources */,
 				26D0BB231C73647400285584 /* MPS.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

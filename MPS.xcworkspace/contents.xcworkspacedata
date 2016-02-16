@@ -2,6 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
+      location = "group:OpeningModel+CoreDataProperties.swift">
+   </FileRef>
+   <FileRef
+      location = "group:OpeningModel.swift">
+   </FileRef>
+   <FileRef
       location = "group:MPS.xcodeproj">
    </FileRef>
    <FileRef
