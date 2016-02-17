@@ -441,6 +441,9 @@
                         </connections>
                     </tableView>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="A7k-JJ-HHR" kind="show" identifier="LearningSegue" id="aXy-MX-uRK"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X9b-2w-tlL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -449,7 +452,7 @@
         <!--Learning View Controller-->
         <scene sceneID="P1R-s4-cEI">
             <objects>
-                <viewController id="A7k-JJ-HHR" customClass="LearningViewController" sceneMemberID="viewController">
+                <viewController id="A7k-JJ-HHR" customClass="LearningViewController" customModule="MPS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K0R-RJ-WOF"/>
                         <viewControllerLayoutGuide type="bottom" id="aXK-31-Eyi"/>
@@ -458,7 +461,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="AEB-lG-ulj" customClass="BoardView">
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="AEB-lG-ulj" customClass="BoardView" customModule="MPS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="20" y="121" width="280" height="280"/>
@@ -502,7 +505,7 @@
                                     <rect key="frame" x="194" y="409" width="30" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="stepButtonPressed:" destination="A7k-JJ-HHR" eventType="touchUpInside" id="yHn-gg-h9N"/>
+                                    <action selector="stepButtonPressed:" destination="A7k-JJ-HHR" eventType="touchUpInside" id="Eix-8Z-ByX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KrM-sr-1hX">
@@ -512,15 +515,12 @@
                                     <rect key="frame" x="132" y="409" width="54" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="playButtonPressed:" destination="A7k-JJ-HHR" eventType="touchUpInside" id="7IR-e4-Ao7"/>
+                                    <action selector="playButtonPressed:" destination="A7k-JJ-HHR" eventType="touchUpInside" id="55H-7g-pn7"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GM8-g9-3mb">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="play"/>
-                                <connections>
-                                    <action selector="playButtonPressed:" destination="A7k-JJ-HHR" eventType="touchUpInside" id="Uw2-y9-gbw"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9TG-L8-pIj">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -533,7 +533,7 @@
                                     <rect key="frame" x="94" y="409" width="30" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="restartButtonPressed:" destination="A7k-JJ-HHR" eventType="touchUpInside" id="KoC-I6-WPC"/>
+                                    <action selector="reloadButtonPressed:" destination="A7k-JJ-HHR" eventType="touchUpInside" id="NB3-sI-0Ek"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EVD-lk-arB">
@@ -543,9 +543,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fU3-pG-5HR">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="play"/>
-                                <connections>
-                                    <action selector="playButtonPressed:" destination="A7k-JJ-HHR" eventType="touchUpInside" id="pna-p3-cfu"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -587,12 +584,12 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="boardView" destination="AEB-lG-ulj" id="KIC-Vb-Jdc"/>
-                        <outlet property="infoLabel" destination="3wY-uk-xeV" id="ih0-mc-dsC"/>
-                        <outlet property="movesTextView" destination="NSo-0R-cqp" id="CZa-px-HgW"/>
-                        <outlet property="openingNameLabel" destination="hmU-D5-wrT" id="gwJ-j9-Nbj"/>
-                        <outlet property="playButton" destination="KrM-sr-1hX" id="ssK-gi-l0B"/>
-                        <outlet property="stepButton" destination="wh7-OE-xp3" id="EQm-gR-a4d"/>
+                        <outlet property="boardView" destination="AEB-lG-ulj" id="krL-fW-tDX"/>
+                        <outlet property="infoLabel" destination="3wY-uk-xeV" id="acj-6M-a4H"/>
+                        <outlet property="movesTextView" destination="NSo-0R-cqp" id="xz2-AG-ZYN"/>
+                        <outlet property="openingNameLabel" destination="hmU-D5-wrT" id="COP-2Z-qrE"/>
+                        <outlet property="playButton" destination="KrM-sr-1hX" id="ZZh-Pu-5wq"/>
+                        <outlet property="stepButton" destination="wh7-OE-xp3" id="774-3B-81h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rma-U2-RUx" userLabel="First Responder" sceneMemberID="firstResponder"/>
