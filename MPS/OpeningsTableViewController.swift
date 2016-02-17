@@ -12,40 +12,39 @@ class OpeningsTableViewController: UITableViewController {
 
     var selectedOpeningsGroup:String!
     
+    var openings:[Opening] = []
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        print(self.selectedOpeningsGroup)
+        self.openings = OpeningsService.getOpenings(self.selectedOpeningsGroup)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return 0
+        return self.openings.count
     }
 
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("OpeningsCellIdentifier", forIndexPath: indexPath)
 
-        // Configure the cell...
+        cell.textLabel!.text = self.openings[indexPath.row].name
 
         return cell
     }
-    */
+
 
     /*
     // Override to support conditional editing of the table view.

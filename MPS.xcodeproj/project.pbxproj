@@ -22,6 +22,12 @@
 		26D0BB3F1C73BD0400285584 /* OpeningModel+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB3D1C73BD0300285584 /* OpeningModel+CoreDataProperties.swift */; };
 		26D0BB401C73BD0400285584 /* OpeningModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB3E1C73BD0300285584 /* OpeningModel.swift */; };
 		26D0BB481C73CB5400285584 /* OpeningsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB471C73CB5400285584 /* OpeningsTableViewController.swift */; };
+		26D0BB4C1C74F51300285584 /* Opening.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB4B1C74F51300285584 /* Opening.m */; };
+		26D0BB4F1C74F60F00285584 /* Board.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB4E1C74F60F00285584 /* Board.m */; };
+		26D0BB531C74F63700285584 /* Move.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB521C74F63700285584 /* Move.m */; };
+		26D0BB561C74F64C00285584 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB551C74F64C00285584 /* Cell.m */; };
+		26D0BB591C74F65600285584 /* Piece.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB581C74F65600285584 /* Piece.m */; };
+		26D0BB5C1C74F66800285584 /* Ruler.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB5B1C74F66800285584 /* Ruler.m */; };
 		973401B8078F868F6BFFBFA4 /* Pods_MPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFEF80EB0550F8839C09CB6 /* Pods_MPS.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,6 +49,20 @@
 		26D0BB3D1C73BD0300285584 /* OpeningModel+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "OpeningModel+CoreDataProperties.swift"; path = "../OpeningModel+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		26D0BB3E1C73BD0300285584 /* OpeningModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OpeningModel.swift; path = ../OpeningModel.swift; sourceTree = "<group>"; };
 		26D0BB471C73CB5400285584 /* OpeningsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningsTableViewController.swift; sourceTree = "<group>"; };
+		26D0BB4A1C74F51300285584 /* MPS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "MPS-Bridging-Header.h"; sourceTree = "<group>"; };
+		26D0BB4B1C74F51300285584 /* Opening.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Opening.m; sourceTree = "<group>"; };
+		26D0BB4D1C74F59900285584 /* Opening.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Opening.h; sourceTree = "<group>"; };
+		26D0BB4E1C74F60F00285584 /* Board.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Board.m; sourceTree = "<group>"; };
+		26D0BB501C74F62200285584 /* Board.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Board.h; sourceTree = "<group>"; };
+		26D0BB511C74F63700285584 /* Move.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Move.h; sourceTree = "<group>"; };
+		26D0BB521C74F63700285584 /* Move.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Move.m; sourceTree = "<group>"; };
+		26D0BB541C74F64C00285584 /* Cell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Cell.h; sourceTree = "<group>"; };
+		26D0BB551C74F64C00285584 /* Cell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Cell.m; sourceTree = "<group>"; };
+		26D0BB571C74F65600285584 /* Piece.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Piece.h; sourceTree = "<group>"; };
+		26D0BB581C74F65600285584 /* Piece.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Piece.m; sourceTree = "<group>"; };
+		26D0BB5A1C74F66800285584 /* Ruler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ruler.h; sourceTree = "<group>"; };
+		26D0BB5B1C74F66800285584 /* Ruler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ruler.m; sourceTree = "<group>"; };
+		26D0BB5E1C74F77D00285584 /* BoardViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoardViewControllerProtocol.h; sourceTree = "<group>"; };
 		7EFEF80EB0550F8839C09CB6 /* Pods_MPS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B84BA18C02F9CB0916C9B0 /* Pods-MPS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MPS/Pods-MPS.debug.xcconfig"; sourceTree = "<group>"; };
 		F509E8AFFAFFFBDB9A03E026 /* Pods-MPS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MPS/Pods-MPS.release.xcconfig"; sourceTree = "<group>"; };
@@ -82,6 +102,7 @@
 			isa = PBXGroup;
 			children = (
 				26D0BB291C73647500285584 /* Info.plist */,
+				26D0BB4A1C74F51300285584 /* MPS-Bridging-Header.h */,
 				26D0BB3D1C73BD0300285584 /* OpeningModel+CoreDataProperties.swift */,
 				26D0BB3E1C73BD0300285584 /* OpeningModel.swift */,
 				26D0BB211C73647400285584 /* MPS.xcdatamodeld */,
@@ -89,6 +110,8 @@
 				26D0BB1E1C73647400285584 /* Main.storyboard */,
 				26D0BB261C73647500285584 /* LaunchScreen.storyboard */,
 				26D0BB241C73647500285584 /* Assets.xcassets */,
+				26D0BB5D1C74F75600285584 /* Protocols */,
+				26D0BB491C74F47900285584 /* models */,
 				26D0BB361C73A55F00285584 /* services */,
 				26D0BB331C73A1BC00285584 /* controllers */,
 			);
@@ -115,6 +138,33 @@
 				26D0BB3B1C73AC6B00285584 /* OpeningsService.swift */,
 			);
 			name = services;
+			sourceTree = "<group>";
+		};
+		26D0BB491C74F47900285584 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				26D0BB501C74F62200285584 /* Board.h */,
+				26D0BB4E1C74F60F00285584 /* Board.m */,
+				26D0BB5A1C74F66800285584 /* Ruler.h */,
+				26D0BB5B1C74F66800285584 /* Ruler.m */,
+				26D0BB4D1C74F59900285584 /* Opening.h */,
+				26D0BB4B1C74F51300285584 /* Opening.m */,
+				26D0BB511C74F63700285584 /* Move.h */,
+				26D0BB521C74F63700285584 /* Move.m */,
+				26D0BB541C74F64C00285584 /* Cell.h */,
+				26D0BB551C74F64C00285584 /* Cell.m */,
+				26D0BB571C74F65600285584 /* Piece.h */,
+				26D0BB581C74F65600285584 /* Piece.m */,
+			);
+			name = models;
+			sourceTree = "<group>";
+		};
+		26D0BB5D1C74F75600285584 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				26D0BB5E1C74F77D00285584 /* BoardViewControllerProtocol.h */,
+			);
+			name = Protocols;
 			sourceTree = "<group>";
 		};
 		5251D90FD30277E7DE1D2F32 /* Frameworks */ = {
@@ -256,14 +306,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				26D0BB4F1C74F60F00285584 /* Board.m in Sources */,
+				26D0BB561C74F64C00285584 /* Cell.m in Sources */,
 				26D0BB381C73A58C00285584 /* TopService.swift in Sources */,
 				26D0BB3A1C73AB3400285584 /* ProfileService.swift in Sources */,
 				26D0BB401C73BD0400285584 /* OpeningModel.swift in Sources */,
 				26D0BB1D1C73647400285584 /* MainViewController.swift in Sources */,
+				26D0BB5C1C74F66800285584 /* Ruler.m in Sources */,
+				26D0BB4C1C74F51300285584 /* Opening.m in Sources */,
 				26D0BB321C736C6300285584 /* TopTableViewController.swift in Sources */,
 				26D0BB1B1C73647400285584 /* AppDelegate.swift in Sources */,
 				26D0BB481C73CB5400285584 /* OpeningsTableViewController.swift in Sources */,
 				26D0BB301C736BA500285584 /* ProfileViewController.swift in Sources */,
+				26D0BB531C74F63700285584 /* Move.m in Sources */,
+				26D0BB591C74F65600285584 /* Piece.m in Sources */,
 				26D0BB3F1C73BD0400285584 /* OpeningModel+CoreDataProperties.swift in Sources */,
 				26D0BB351C73A22700285584 /* OpeningsGroupsTableViewController.swift in Sources */,
 				26D0BB3C1C73AC6B00285584 /* OpeningsService.swift in Sources */,
@@ -379,10 +435,13 @@
 			baseConfigurationReference = A0B84BA18C02F9CB0916C9B0 /* Pods-MPS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MPS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tfotr.MPS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MPS/MPS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -391,10 +450,12 @@
 			baseConfigurationReference = F509E8AFFAFFFBDB9A03E026 /* Pods-MPS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = MPS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tfotr.MPS;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "MPS/MPS-Bridging-Header.h";
 			};
 			name = Release;
 		};

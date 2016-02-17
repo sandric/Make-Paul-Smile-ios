@@ -10,12 +10,13 @@ import UIKit
 
 class OpeningsGroupsTableViewController: UITableViewController {
 
-    var openingsGroups = OpeningsService.getGroups()
-    
+    var openingsGroups:[String] = []
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.openingsGroups = OpeningsService.getGroups()
     }
 
     override func didReceiveMemoryWarning() {
