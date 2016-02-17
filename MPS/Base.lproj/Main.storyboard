@@ -580,7 +580,11 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" id="wlw-Kp-bRY">
-                        <barButtonItem key="rightBarButtonItem" title="Details" id="nyE-C7-sCz"/>
+                        <barButtonItem key="rightBarButtonItem" title="Details" id="nyE-C7-sCz">
+                            <connections>
+                                <segue destination="z2p-04-u94" kind="show" identifier="ResultsSegue" id="fS4-1J-50K"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
@@ -599,7 +603,7 @@
         <!--Details-->
         <scene sceneID="L6o-yo-Lao">
             <objects>
-                <viewController id="z2p-04-u94" customClass="OpeningDetailsViewController" sceneMemberID="viewController">
+                <viewController id="z2p-04-u94" customClass="ResultsViewController" customModule="MPS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LvR-tP-3cL"/>
                         <viewControllerLayoutGuide type="bottom" id="cvV-tV-9mi"/>
@@ -611,9 +615,6 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h42-ar-aem">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Cancel"/>
-                                <connections>
-                                    <action selector="cancelButtonPressed:" destination="z2p-04-u94" eventType="touchUpInside" id="78G-mr-A65"/>
-                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="7Gv-T4-lCO">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
@@ -654,8 +655,8 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="openingDetailsTextView" destination="7Gv-T4-lCO" id="Zhk-68-jok"/>
-                        <outlet property="openingNameLabel" destination="sad-g1-RV2" id="6Ki-a4-YLE"/>
+                        <outlet property="openingDetailsTextView" destination="7Gv-T4-lCO" id="2uM-fR-QFe"/>
+                        <outlet property="openingNameLabel" destination="sad-g1-RV2" id="2Ef-QO-4o2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ev5-D3-BiE" userLabel="First Responder" sceneMemberID="firstResponder"/>

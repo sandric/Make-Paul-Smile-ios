@@ -113,4 +113,13 @@ class LearningViewController: UIViewController, BoardViewControllerDelegate {
     }
     
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "ResultsSegue" {
+            
+            let resultsViewController:ResultsViewController = segue.destinationViewController as! ResultsViewController
+            resultsViewController.opening = self.opening
+        }
+    }
+    
+    
 }
