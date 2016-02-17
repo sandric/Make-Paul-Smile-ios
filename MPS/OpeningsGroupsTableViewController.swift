@@ -9,8 +9,19 @@
 import UIKit
 
 class OpeningsGroupsTableViewController: UITableViewController {
+    
 
     var openingsGroups:[String] = []
+    
+    var trainingGroup:String!
+    
+    
+    @IBAction func trainButtonPressed (sender:UIButton) {
+        
+        self.trainingGroup = self.openingsGroups[sender.tag]
+        
+        performSegueWithIdentifier("TrainingSegue", sender: self)
+    }
     
     
     override func viewDidLoad() {
@@ -40,9 +51,13 @@ class OpeningsGroupsTableViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("OpeningsGroupsCellIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("OpeningsGroupsCellIdentifier", forIndexPath: indexPath) as! OpeningGroupsTableViewCell
 
-        cell.textLabel!.text = self.openingsGroups[indexPath.row]
+        cell.openingGroupLabel.text = self.openingsGroups[indexPath.row]
+        
+        cell.trainButton.tag = indexPath.row
+        cell.trainButton.addTarget(self, action: "trainButtonPressed:", forControlEvents: .TouchUpInside)
+        
 
         return cell
     }
@@ -54,15 +69,21 @@ class OpeningsGroupsTableViewController: UITableViewController {
     }
     
     
-    
     // MARK: - Navigation
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "OpeningsSegue" {
+        switch segue.identifier! {
+            case "OpeningsSegue":
+                let openingsViewController:OpeningsTableViewController = segue.destinationViewController as! OpeningsTableViewController
+                let indexPath = self.tableView.indexPathForSelectedRow!
+                openingsViewController.selectedOpeningsGroup = self.openingsGroups[indexPath.row]
             
-            let openingsViewController:OpeningsTableViewController = segue.destinationViewController as! OpeningsTableViewController
-            let indexPath = self.tableView.indexPathForSelectedRow!
-            openingsViewController.selectedOpeningsGroup = self.openingsGroups[indexPath.row]
+            case "TrainingSegue":
+                let trainingViewController:TrainingViewController = segue.destinationViewController as! TrainingViewController
+                trainingViewController.trainingGroup = self.trainingGroup
+            
+            default:
+                print("Unknown segue.")
         }
     }
 }
