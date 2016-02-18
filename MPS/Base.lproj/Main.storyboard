@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
     </dependencies>
     <scenes>
-        <!--Main View Controller-->
+        <!--Make Paul Smile-->
         <scene sceneID="Ve4-tb-pOs">
             <objects>
                 <viewController id="Hho-Fm-3Ch" customClass="MainViewController" customModule="MPS" customModuleProvider="target" sceneMemberID="viewController">
@@ -64,7 +64,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="2b7-Ih-hb4"/>
+                    <navigationItem key="navigationItem" title="Make Paul Smile" id="2b7-Ih-hb4"/>
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
@@ -314,6 +314,7 @@
                         <outlet property="openingsLeftLabel" destination="6hG-HR-1W1" id="1nU-Zk-t4q"/>
                         <outlet property="scoreLabel" destination="B8H-4T-oE8" id="mKx-p3-JC3"/>
                         <outlet property="skipButton" destination="3jq-pg-bEA" id="mwB-BP-dvD"/>
+                        <segue destination="96w-k3-GBs" kind="presentation" identifier="ResultsSegue" id="jws-1d-IPT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DsU-ot-6y7" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -323,7 +324,7 @@
         <!--Results View Controller-->
         <scene sceneID="iAQ-h6-DL1">
             <objects>
-                <viewController id="96w-k3-GBs" customClass="ResultsViewController" sceneMemberID="viewController">
+                <viewController id="96w-k3-GBs" customClass="ResultsViewController" customModule="MPS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="isx-ss-Cxa"/>
                         <viewControllerLayoutGuide type="bottom" id="EUL-9c-qVH"/>
@@ -374,7 +375,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="20" y="345" width="125" height="21"/>
+                                    <rect key="frame" x="20" y="345" width="244" height="21"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hqT-wV-TcE">
@@ -383,7 +384,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                                 <variation key="heightClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="153" y="345" width="147" height="21"/>
+                                    <rect key="frame" x="264" y="345" width="36" height="21"/>
                                 </variation>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7e3-Ey-4Ca">
@@ -392,6 +393,10 @@
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="145" y="463" width="30" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="OKButtonPressed:" destination="96w-k3-GBs" eventType="touchUpInside" id="GMn-A4-VhV"/>
+                                    <segue destination="MsQ-vL-EBP" kind="show" id="7cs-F6-hi0"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqx-Md-wam">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -447,10 +452,11 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="bestScoreLabel" destination="hqT-wV-TcE" id="2sc-vG-YyC"/>
-                        <outlet property="groupLabel" destination="4fT-9O-r3e" id="vov-r6-J32"/>
-                        <outlet property="resultsLabel" destination="9Zz-fm-p0C" id="dB1-dM-ybx"/>
-                        <outlet property="scoreLabel" destination="d4c-eZ-r7s" id="mcz-XT-HvW"/>
+                        <outlet property="groupLabel" destination="4fT-9O-r3e" id="roW-nR-5rD"/>
+                        <outlet property="previousBestGameGroupLabel" destination="DVN-ad-OWU" id="10b-y0-suV"/>
+                        <outlet property="previousBestGameScoreLabel" destination="hqT-wV-TcE" id="MdU-UV-btq"/>
+                        <outlet property="resultsLabel" destination="9Zz-fm-p0C" id="w3H-KY-6os"/>
+                        <outlet property="scoreLabel" destination="d4c-eZ-r7s" id="Kpd-YS-iWU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Pz-wU-7uB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -486,7 +492,7 @@
             </objects>
             <point key="canvasLocation" x="567" y="-417.75"/>
         </scene>
-        <!--Learning View Controller-->
+        <!--Learning-->
         <scene sceneID="P1R-s4-cEI">
             <objects>
                 <viewController id="A7k-JJ-HHR" customClass="LearningViewController" customModule="MPS" customModuleProvider="target" sceneMemberID="viewController">
@@ -616,10 +622,10 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="wlw-Kp-bRY">
+                    <navigationItem key="navigationItem" title="Learning" id="wlw-Kp-bRY">
                         <barButtonItem key="rightBarButtonItem" title="Details" id="nyE-C7-sCz">
                             <connections>
-                                <segue destination="z2p-04-u94" kind="show" identifier="ResultsSegue" id="fS4-1J-50K"/>
+                                <segue destination="z2p-04-u94" kind="show" identifier="DetailsSegue" id="fS4-1J-50K"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -640,7 +646,7 @@
         <!--Details-->
         <scene sceneID="L6o-yo-Lao">
             <objects>
-                <viewController id="z2p-04-u94" customClass="ResultsViewController" customModule="MPS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="z2p-04-u94" customClass="DetailsViewController" customModule="MPS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LvR-tP-3cL"/>
                         <viewControllerLayoutGuide type="bottom" id="cvV-tV-9mi"/>
