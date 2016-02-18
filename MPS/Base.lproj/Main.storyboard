@@ -167,7 +167,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="iI2-SG-J2l" customClass="BoardView">
+                            <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="iI2-SG-J2l" customClass="BoardView" customModule="MPS" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="20" y="121" width="280" height="280"/>
@@ -206,6 +206,9 @@
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="14" y="411" width="71" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="endGameButtonPressed:" destination="x4l-MV-m7D" eventType="touchUpInside" id="MYi-pf-Cn3"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B8H-4T-oE8">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -240,6 +243,9 @@
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="121" y="411" width="30" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="skipButtonPressed:" destination="x4l-MV-m7D" eventType="touchUpInside" id="TV5-Np-aAx"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6hG-HR-1W1">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
@@ -256,6 +262,9 @@
                                 <variation key="heightClass=regular" fixedFrame="YES">
                                     <rect key="frame" x="234" y="411" width="35" height="30"/>
                                 </variation>
+                                <connections>
+                                    <action selector="hintButtonPressed:" destination="x4l-MV-m7D" eventType="touchUpInside" id="NhQ-a2-78s"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -297,7 +306,14 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
+                        <outlet property="boardView" destination="iI2-SG-J2l" id="1H0-6d-N8B"/>
+                        <outlet property="hintButton" destination="jIF-CI-vnu" id="RKJ-nh-SNp"/>
+                        <outlet property="infoLabel" destination="fll-bG-9h6" id="Wkm-k8-Law"/>
+                        <outlet property="movesTextView" destination="1Ql-zl-xXa" id="QdC-gT-QeM"/>
                         <outlet property="openingNameLabel" destination="3ST-9J-qUU" id="XI0-df-pFj"/>
+                        <outlet property="openingsLeftLabel" destination="6hG-HR-1W1" id="1nU-Zk-t4q"/>
+                        <outlet property="scoreLabel" destination="B8H-4T-oE8" id="mKx-p3-JC3"/>
+                        <outlet property="skipButton" destination="3jq-pg-bEA" id="mwB-BP-dvD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DsU-ot-6y7" userLabel="First Responder" sceneMemberID="firstResponder"/>

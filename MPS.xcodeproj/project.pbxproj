@@ -28,6 +28,14 @@
 		26D0BB561C74F64C00285584 /* Cell.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB551C74F64C00285584 /* Cell.m */; };
 		26D0BB591C74F65600285584 /* Piece.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB581C74F65600285584 /* Piece.m */; };
 		26D0BB5C1C74F66800285584 /* Ruler.m in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB5B1C74F66800285584 /* Ruler.m */; };
+		26D0BB601C75055800285584 /* LearningViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB5F1C75055800285584 /* LearningViewController.swift */; };
+		26D0BB631C75063F00285584 /* BoardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB621C75063F00285584 /* BoardView.swift */; };
+		26D0BB651C75065000285584 /* CellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB641C75065000285584 /* CellView.swift */; };
+		26D0BB7B1C75244700285584 /* black in Resources */ = {isa = PBXBuildFile; fileRef = 26D0BB7A1C75244700285584 /* black */; };
+		26D0BB7D1C75245200285584 /* white in Resources */ = {isa = PBXBuildFile; fileRef = 26D0BB7C1C75245200285584 /* white */; };
+		26D0BB7F1C75332500285584 /* ResultsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB7E1C75332500285584 /* ResultsViewController.swift */; };
+		26D0BB821C753A4900285584 /* OpeningGroupsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB811C753A4900285584 /* OpeningGroupsTableViewCell.swift */; };
+		26D0BB841C753D6600285584 /* TrainingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB831C753D6600285584 /* TrainingViewController.swift */; };
 		973401B8078F868F6BFFBFA4 /* Pods_MPS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7EFEF80EB0550F8839C09CB6 /* Pods_MPS.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +71,14 @@
 		26D0BB5A1C74F66800285584 /* Ruler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ruler.h; sourceTree = "<group>"; };
 		26D0BB5B1C74F66800285584 /* Ruler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ruler.m; sourceTree = "<group>"; };
 		26D0BB5E1C74F77D00285584 /* BoardViewControllerProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BoardViewControllerProtocol.h; sourceTree = "<group>"; };
+		26D0BB5F1C75055800285584 /* LearningViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LearningViewController.swift; sourceTree = "<group>"; };
+		26D0BB621C75063F00285584 /* BoardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BoardView.swift; sourceTree = "<group>"; };
+		26D0BB641C75065000285584 /* CellView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CellView.swift; sourceTree = "<group>"; };
+		26D0BB7A1C75244700285584 /* black */ = {isa = PBXFileReference; lastKnownFileType = folder; name = black; path = chess/black; sourceTree = "<group>"; };
+		26D0BB7C1C75245200285584 /* white */ = {isa = PBXFileReference; lastKnownFileType = folder; name = white; path = chess/white; sourceTree = "<group>"; };
+		26D0BB7E1C75332500285584 /* ResultsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultsViewController.swift; sourceTree = "<group>"; };
+		26D0BB811C753A4900285584 /* OpeningGroupsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OpeningGroupsTableViewCell.swift; sourceTree = "<group>"; };
+		26D0BB831C753D6600285584 /* TrainingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrainingViewController.swift; sourceTree = "<group>"; };
 		7EFEF80EB0550F8839C09CB6 /* Pods_MPS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MPS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0B84BA18C02F9CB0916C9B0 /* Pods-MPS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MPS/Pods-MPS.debug.xcconfig"; sourceTree = "<group>"; };
 		F509E8AFFAFFFBDB9A03E026 /* Pods-MPS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MPS.release.xcconfig"; path = "Pods/Target Support Files/Pods-MPS/Pods-MPS.release.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +117,7 @@
 		26D0BB191C73647400285584 /* MPS */ = {
 			isa = PBXGroup;
 			children = (
+				26D0BB661C75239600285584 /* Supporting Files */,
 				26D0BB291C73647500285584 /* Info.plist */,
 				26D0BB4A1C74F51300285584 /* MPS-Bridging-Header.h */,
 				26D0BB3D1C73BD0300285584 /* OpeningModel+CoreDataProperties.swift */,
@@ -114,6 +131,8 @@
 				26D0BB491C74F47900285584 /* models */,
 				26D0BB361C73A55F00285584 /* services */,
 				26D0BB331C73A1BC00285584 /* controllers */,
+				26D0BB611C7505F000285584 /* views */,
+				26D0BB801C753A0B00285584 /* cells */,
 			);
 			path = MPS;
 			sourceTree = "<group>";
@@ -126,6 +145,9 @@
 				26D0BB311C736C6300285584 /* TopTableViewController.swift */,
 				26D0BB341C73A22700285584 /* OpeningsGroupsTableViewController.swift */,
 				26D0BB471C73CB5400285584 /* OpeningsTableViewController.swift */,
+				26D0BB5F1C75055800285584 /* LearningViewController.swift */,
+				26D0BB7E1C75332500285584 /* ResultsViewController.swift */,
+				26D0BB831C753D6600285584 /* TrainingViewController.swift */,
 			);
 			name = controllers;
 			sourceTree = "<group>";
@@ -165,6 +187,32 @@
 				26D0BB5E1C74F77D00285584 /* BoardViewControllerProtocol.h */,
 			);
 			name = Protocols;
+			sourceTree = "<group>";
+		};
+		26D0BB611C7505F000285584 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				26D0BB621C75063F00285584 /* BoardView.swift */,
+				26D0BB641C75065000285584 /* CellView.swift */,
+			);
+			name = views;
+			sourceTree = "<group>";
+		};
+		26D0BB661C75239600285584 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				26D0BB7C1C75245200285584 /* white */,
+				26D0BB7A1C75244700285584 /* black */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		26D0BB801C753A0B00285584 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				26D0BB811C753A4900285584 /* OpeningGroupsTableViewCell.swift */,
+			);
+			name = cells;
 			sourceTree = "<group>";
 		};
 		5251D90FD30277E7DE1D2F32 /* Frameworks */ = {
@@ -247,6 +295,8 @@
 			files = (
 				26D0BB281C73647500285584 /* LaunchScreen.storyboard in Resources */,
 				26D0BB251C73647500285584 /* Assets.xcassets in Resources */,
+				26D0BB7D1C75245200285584 /* white in Resources */,
+				26D0BB7B1C75244700285584 /* black in Resources */,
 				26D0BB201C73647400285584 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -308,6 +358,7 @@
 			files = (
 				26D0BB4F1C74F60F00285584 /* Board.m in Sources */,
 				26D0BB561C74F64C00285584 /* Cell.m in Sources */,
+				26D0BB601C75055800285584 /* LearningViewController.swift in Sources */,
 				26D0BB381C73A58C00285584 /* TopService.swift in Sources */,
 				26D0BB3A1C73AB3400285584 /* ProfileService.swift in Sources */,
 				26D0BB401C73BD0400285584 /* OpeningModel.swift in Sources */,
@@ -316,14 +367,19 @@
 				26D0BB4C1C74F51300285584 /* Opening.m in Sources */,
 				26D0BB321C736C6300285584 /* TopTableViewController.swift in Sources */,
 				26D0BB1B1C73647400285584 /* AppDelegate.swift in Sources */,
+				26D0BB7F1C75332500285584 /* ResultsViewController.swift in Sources */,
+				26D0BB821C753A4900285584 /* OpeningGroupsTableViewCell.swift in Sources */,
 				26D0BB481C73CB5400285584 /* OpeningsTableViewController.swift in Sources */,
 				26D0BB301C736BA500285584 /* ProfileViewController.swift in Sources */,
 				26D0BB531C74F63700285584 /* Move.m in Sources */,
 				26D0BB591C74F65600285584 /* Piece.m in Sources */,
 				26D0BB3F1C73BD0400285584 /* OpeningModel+CoreDataProperties.swift in Sources */,
+				26D0BB841C753D6600285584 /* TrainingViewController.swift in Sources */,
 				26D0BB351C73A22700285584 /* OpeningsGroupsTableViewController.swift in Sources */,
+				26D0BB631C75063F00285584 /* BoardView.swift in Sources */,
 				26D0BB3C1C73AC6B00285584 /* OpeningsService.swift in Sources */,
 				26D0BB231C73647400285584 /* MPS.xcdatamodeld in Sources */,
+				26D0BB651C75065000285584 /* CellView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
