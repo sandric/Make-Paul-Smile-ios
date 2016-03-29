@@ -15,7 +15,7 @@ import CoreData
 extension OpeningModel {
 
     @NSManaged var name: String?
-    @NSManaged var group: String?
+    @NSManaged var groupname: String?
     @NSManaged var moves: String?
     @NSManaged var annotations: String?
     @NSManaged var details: String?

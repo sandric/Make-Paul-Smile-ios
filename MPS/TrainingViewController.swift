@@ -42,7 +42,7 @@ class TrainingViewController: UIViewController, BoardViewControllerDelegate {
     
     
     
-    var trainingGroup:String!
+    var trainingGroupName:String!
     
     var openings:[Opening] = []
     
@@ -56,9 +56,9 @@ class TrainingViewController: UIViewController, BoardViewControllerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.title = "Training " + self.trainingGroup
+        self.title = "Training " + self.trainingGroupName
         
-        self.openings = OpeningsService.getOpenings(self.trainingGroup)
+        self.openings = OpeningsService.getOpenings(self.trainingGroupName)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -182,7 +182,7 @@ class TrainingViewController: UIViewController, BoardViewControllerDelegate {
         if segue.identifier == "ResultsSegue" {
             
             let resultsViewController:ResultsViewController = segue.destinationViewController as! ResultsViewController
-            resultsViewController.group = self.trainingGroup
+            resultsViewController.groupname = self.trainingGroupName
             resultsViewController.score = self.score
         }
     }

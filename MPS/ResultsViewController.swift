@@ -22,49 +22,44 @@ class ResultsViewController: UIViewController {
     
     
     
-    @IBAction func OKButtonPressed(sender: UIButton) {
-    }
-    
-    
-    
-    var group:String!
+    var groupname:String!
     var score:Int!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.groupLabel.text = self.group
+        self.groupLabel.text = self.groupname
         self.scoreLabel.text = "\(self.score)"
         
-        self.previousBestGameGroupLabel.text = "Best " + self.group + " score:"
+        self.previousBestGameGroupLabel.text = "Best " + self.groupname + " score:"
         
         var bestScore = 0
         
-        if let previousBestGame = ProfileService.getBestGame(self.group) {
+        if let previousBestGame = ProfileService.getBestGame(self.groupname) {
         
             bestScore = previousBestGame["score"] as! Int
             
             if (self.score > bestScore) {
-                self.resultsLabel.text = "You increased your previous result in " + self.group + " game. Good Job!"
+                self.resultsLabel.text = "You increased your previous result in " + self.groupname + " game. Good Job!"
                 bestScore = self.score
             } else if (self.score == bestScore) {
-                self.resultsLabel.text = "You repeated your previous result in " + self.group + " game. Just one point to succeed!"
+                self.resultsLabel.text = "You repeated your previous result in " + self.groupname + " game. Just one point to succeed!"
             } else {
-                self.resultsLabel.text = "You can and actually already did better in " + self.group + " game. I'm disappointed..."
+                self.resultsLabel.text = "You can and actually already did better in " + self.groupname + " game. I'm disappointed..."
             }
             
             self.previousBestGameScoreLabel.text = "\(bestScore)"
             
         } else {
-            self.resultsLabel.text = "Looks like its your first result in " + self.group + " game. Great!"
+            self.resultsLabel.text = "Looks like its your first result in " + self.groupname + " game. Great!"
             bestScore = self.score
         }
 
         self.previousBestGameScoreLabel.text = "\(bestScore)"
         
         if bestScore == self.score {
-            ProfileService.setBestGame(self.group, score: bestScore)
+            ProfileService.setBestGame(self.groupname, score: bestScore)
         }
 
     }

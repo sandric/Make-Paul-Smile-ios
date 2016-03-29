@@ -43,12 +43,12 @@ class TopTableViewController: UITableViewController {
         
         let topGame = self.topGames[indexPath.row]
         
-        let group = topGame["group"] as? String
+        let groupname = topGame["groupname"] as? String
         let username = topGame["username"] as? String
         let score = topGame["score"] as? Int
         
         let groupLabel:UILabel = cell.viewWithTag(1) as! UILabel
-        groupLabel.text = group
+        groupLabel.text = groupname
         
         let usernameLabel:UILabel = cell.viewWithTag(2) as! UILabel
         usernameLabel.text = username

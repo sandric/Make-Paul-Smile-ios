@@ -36,15 +36,22 @@ class ProfileViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
-    @IBAction func reloadBarButtomPressed(sender: UIBarButtonItem) {
-        ProfileService.fetchProfileToUserDefaults(self.onUserDefaultsChanged)
+    
+    @IBAction func updateBarButtonPressed(sender: UIBarButtonItem) {
+        ProfileService.updateProfile(self.onUserDefaultsChanged)
     }
     
     
     
+    @IBAction func signOutButtonPressed(sender: UIButton) {
+        performSegueWithIdentifier("SignOutSegue", sender: self)
+    }
+    
+    
     func displayProfileUserDefaults () {
+        
+        print("drawinf...");
+        
         if let profileUserDefaults = NSUserDefaults.standardUserDefaults()
             .objectForKey("profile") as? NSDictionary
         {
@@ -55,7 +62,7 @@ class ProfileViewController: UIViewController {
             
             if let best_game = profileUserDefaults["best_game"] as? NSDictionary
             {
-                if let best_group = best_game["group"] as? String {
+                if let best_group = best_game["groupname"] as? String {
                     self.bestGameGroupLabel.text = best_group
                 }
                 
@@ -64,32 +71,32 @@ class ProfileViewController: UIViewController {
                 }
             }
             
-            if let best_games_by_group = profileUserDefaults["best_games_by_group"] as? NSArray
+            if let best_games = profileUserDefaults["best_games"] as? NSArray
             {
-                for best_game_by_group_optional in best_games_by_group {
-                    if let best_game_by_group = best_game_by_group_optional as? NSDictionary {
+                for best_game_optional in best_games {
+                    if let best_game = best_game_optional as? NSDictionary {
                         
-                        if let best_group = best_game_by_group["group"] as? String {
+                        if let best_group = best_game["groupname"] as? String {
                             
                             switch best_group {
                                 
                                 case "Open":
-                                    self.bestOpenGameScore.text = "\(best_game_by_group["score"] as! Int)"
+                                    self.bestOpenGameScore.text = "\(best_game["score"] as! Int)"
 
                                 case "Semi-open":
-                                    self.bestSemiOpenGameScore.text = "\(best_game_by_group["score"] as! Int)"
+                                    self.bestSemiOpenGameScore.text = "\(best_game["score"] as! Int)"
                                 
                                 case "Closed":
-                                    self.bestClosedGameScore.text = "\(best_game_by_group["score"] as! Int)"
+                                    self.bestClosedGameScore.text = "\(best_game["score"] as! Int)"
 
                                 case "Semi-closed":
-                                    self.bestSemiClosedGameScore.text = "\(best_game_by_group["score"] as! Int)"
+                                    self.bestSemiClosedGameScore.text = "\(best_game["score"] as! Int)"
 
                                 case "Indian-defence":
-                                    self.bestIndianDefenceGameScore.text = "\(best_game_by_group["score"] as! Int)"
+                                    self.bestIndianDefenceGameScore.text = "\(best_game["score"] as! Int)"
 
                                 case "Flank":
-                                    self.bestFlankGameScore.text = "\(best_game_by_group["score"] as! Int)"
+                                    self.bestFlankGameScore.text = "\(best_game["score"] as! Int)"
                                 
                                 default:
                                     print("No played games.")
@@ -105,5 +112,19 @@ class ProfileViewController: UIViewController {
     
     func onUserDefaultsChanged () {
         self.displayProfileUserDefaults()
+    }
+    
+    
+    // MARK: - Navigation
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        switch segue.identifier! {
+            case "SignOutSegue":
+                print("Clearing user data")
+                ProfileService.unsetProfile()
+                
+            default:
+                print("Unknown segue.")
+        }
     }
 }

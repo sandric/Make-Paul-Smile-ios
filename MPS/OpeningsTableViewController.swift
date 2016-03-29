@@ -10,7 +10,7 @@ import UIKit
 
 class OpeningsTableViewController: UITableViewController {
 
-    var selectedOpeningsGroup:String!
+    var selectedOpeningsGroupName:String!
     
     var openings:[Opening] = []
     
@@ -19,7 +19,7 @@ class OpeningsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.openings = OpeningsService.getOpenings(self.selectedOpeningsGroup)
+        self.openings = OpeningsService.getOpenings(self.selectedOpeningsGroupName)
     }
 
     override func didReceiveMemoryWarning() {
@@ -60,6 +60,4 @@ class OpeningsTableViewController: UITableViewController {
             learningViewController.opening = self.openings[indexPath.row]
         }
     }
-    
-
 }

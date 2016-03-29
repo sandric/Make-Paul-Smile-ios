@@ -15,8 +15,24 @@ import CoreData
 
 class OpeningsService {
     
-    static func getGroups () -> [String] {
+    static func getGroupNames () -> [String] {
         return ["Open", "Semi-open", "Closed", "Semi-closed", "Indian-defence", "Flank"]
+    }
+    
+    
+    static func destroyOpenings () {
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedContext = appDelegate.managedObjectContext
+        
+        let fetchRequest = NSFetchRequest(entityName: "OpeningModel")
+        let deleteRequest = NSBatchDeleteRequest(fetchRequest: fetchRequest)
+        
+        do {
+            try managedContext.executeRequest(deleteRequest)
+        } catch let error as NSError {
+            print(error)
+        }
     }
     
     
@@ -33,11 +49,11 @@ class OpeningsService {
         return openings
     }
     
-    static func getOpenings (group:String) -> [Opening] {
+    static func getOpenings (groupname:String) -> [Opening] {
         
         var openings:[Opening] = []
         
-        let openingModels = OpeningsService.fetchOpeningFromCoreData(group)
+        let openingModels = OpeningsService.fetchOpeningFromCoreData(groupname)
         
         for openingModel in openingModels {
             openings.append(OpeningsService.parseOpeningFromNSManagedObject(openingModel))
@@ -64,11 +80,14 @@ class OpeningsService {
         Alamofire.request(.GET, "http://localhost:8080/api/openings")
             .responseJSON { response in
                 if let openings = response.result.value as? Array<Dictionary<String,AnyObject>> {
+                    
+                    OpeningsService.destroyOpenings()
+                    
                     for opening in openings {
                         
                         let name = opening["name"] as! String
             
-                        let group = opening["group"] as! String
+                        let groupname = opening["groupname"] as! String
                         
                         let moves = opening["moves"] as! [String]
                         let annotations = opening["annotations"] as! [String]
@@ -77,14 +96,14 @@ class OpeningsService {
             
                         let startingMove = opening["starting_move"] as! Int
                         
-                        OpeningsService.storeOpeningInCoreData(name, group: group, moves: moves, annotations: annotations, details: details, startingMove: startingMove)
+                        OpeningsService.storeOpeningInCoreData(name, groupname: groupname, moves: moves, annotations: annotations, details: details, startingMove: startingMove)
                     }
                 }
             }
     }
     
     
-    static func storeOpeningInCoreData(name:String, group:String, moves:[String], annotations:[String], details:String, startingMove:Int)
+    static func storeOpeningInCoreData(name:String, groupname:String, moves:[String], annotations:[String], details:String, startingMove:Int)
     {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -96,7 +115,7 @@ class OpeningsService {
             insertIntoManagedObjectContext: managedContext)
         
         openingModel.setValue(name, forKey: "name")
-        openingModel.setValue(group, forKey: "group")
+        openingModel.setValue(groupname, forKey: "groupname")
         openingModel.setValue(moves.joinWithSeparator(";"), forKey: "moves")
         openingModel.setValue(annotations.joinWithSeparator(";"), forKey: "annotations")
         openingModel.setValue(details, forKey: "details")
@@ -132,7 +151,7 @@ class OpeningsService {
         return openingModels;
     }
     
-    static func fetchOpeningFromCoreData(group:String) -> [NSManagedObject]
+    static func fetchOpeningFromCoreData(groupname:String) -> [NSManagedObject]
     {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
         let managedContext = appDelegate.managedObjectContext
@@ -141,7 +160,7 @@ class OpeningsService {
         
         let fetchRequest = NSFetchRequest(entityName: "OpeningModel")
         
-        fetchRequest.predicate = NSPredicate(format: "group == %@", group)
+        fetchRequest.predicate = NSPredicate(format: "groupname == %@", groupname)
         
         do {
             let results =

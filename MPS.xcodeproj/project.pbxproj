@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		26748D781CA970A10091256A /* AuthorizationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26748D771CA970A10091256A /* AuthorizationViewController.swift */; };
 		26D0BB1B1C73647400285584 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB1A1C73647400285584 /* AppDelegate.swift */; };
 		26D0BB1D1C73647400285584 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26D0BB1C1C73647400285584 /* MainViewController.swift */; };
 		26D0BB201C73647400285584 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 26D0BB1E1C73647400285584 /* Main.storyboard */; };
@@ -41,6 +42,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		26748D771CA970A10091256A /* AuthorizationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorizationViewController.swift; sourceTree = "<group>"; };
 		26D0BB171C73647400285584 /* MPS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MPS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		26D0BB1A1C73647400285584 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		26D0BB1C1C73647400285584 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		26D0BB331C73A1BC00285584 /* controllers */ = {
 			isa = PBXGroup;
 			children = (
+				26748D771CA970A10091256A /* AuthorizationViewController.swift */,
 				26D0BB1C1C73647400285584 /* MainViewController.swift */,
 				26D0BB2F1C736BA500285584 /* ProfileViewController.swift */,
 				26D0BB311C736C6300285584 /* TopTableViewController.swift */,
@@ -377,6 +380,7 @@
 				26D0BB531C74F63700285584 /* Move.m in Sources */,
 				26D0BB591C74F65600285584 /* Piece.m in Sources */,
 				26D0BB3F1C73BD0400285584 /* OpeningModel+CoreDataProperties.swift in Sources */,
+				26748D781CA970A10091256A /* AuthorizationViewController.swift in Sources */,
 				26D0BB861C75F3EE00285584 /* ResultsViewController.swift in Sources */,
 				26D0BB841C753D6600285584 /* TrainingViewController.swift in Sources */,
 				26D0BB351C73A22700285584 /* OpeningsGroupsTableViewController.swift in Sources */,
